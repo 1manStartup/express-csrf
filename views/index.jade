@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  form(method='post')
+    legend= 'CSRF対策済みフォーム'
+    input(type='text', name='text')
+    input(type='hidden', name='_csrf', value=_csrf)
+    input(type='submit')
+
+  form(method='post')
+    legend= '特殊なウィルス'
+    input(type='text', name='text')
+    input(type='submit')
