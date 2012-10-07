@@ -14,7 +14,7 @@ app.configure(function() {
   app.use(express.session());
   app.use(express.csrf());
   app.use(function(req, res, next) {
-    res.locals._csrf = req.session._csrf;
+    res.locals._csrf = req.session._csrf; // sessionからresponse変数
     next();
   });
   app.use(app.router);
